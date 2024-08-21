@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "9698938e-2c0f-4f6f-861e-8524de17b9ec",
+		"name": "crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3000/api",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api"
+					]
+				},
+				"description": "Obtenemos todas las colecciones existentes en la DB.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3000/api/familia",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"familia"
+					]
+				},
+				"description": "Obtenemos todos los elementos de la tabla {coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3000/api/familia/62279831dd3bb03061fc8953",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"familia",
+						"62279831dd3bb03061fc8953"
+					]
+				},
+				"description": "Obtenemos el elemento indicado en {id} de la tabla {coleccion}"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "password1234",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tipo\": \"primo\",\n    \"nombre\": \"jose\",\n    \"edad\": \"16\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/familia",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"familia"
+					]
+				},
+				"description": "Creamos un nuevo elemento en la tabla {coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "password1234",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"francisco\",\n    \"edad\": \"50\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/familia/6235b490c829dd7e6c26bc1d",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"familia",
+						"6235b490c829dd7e6c26bc1d"
+					]
+				},
+				"description": "Modificamos el elemento {id} de la tabla {coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "password1234",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:3000/api/familia/6230cc5094308726b954b2fb",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"familia",
+						"6230cc5094308726b954b2fb"
+					]
+				},
+				"description": "Eliminamos el elemento {id} de la tabla {coleccion}."
+			},
+			"response": []
+		}
+	]
+}
